@@ -1,7 +1,7 @@
 /*
 Three fishermen puzzler for more possible catch sizes
 */
-//---------------------------------------------------------------------------80
+//------------------------------------------------------------------------------------------------------------------120
 #include<stdio.h>
 
 #define NUMBER_OF_FISHERMEN 3
@@ -14,30 +14,27 @@ int main(void) {
 	int fisherman3 = 0;
 	int totalCatch = 0;
 	int leftToRot = 0;
-	int * pBiggerCatch = &totalCatch;
+	// int * pBiggerCatch = &totalCatch;
 
 	for (int i = 0; i < 10; ++i) {
 
-		for (totalCatch = * pBiggerCatch; totalCatch < 100; ++totalCatch) {
+		for (totalCatch = totalCatch; totalCatch < 1000; ++totalCatch) {
 
-			if ((totalCatch - DISCARDED_FISH) % 3 == 0) {
-				fisherman1 = (totalCatch - DISCARDED_FISH) / NUMBER_OF_FISHERMEN;
+			if ((totalCatch - DISCARDED_FISH) % 3 == 0) {fisherman1 = (totalCatch - DISCARDED_FISH) / 
+					NUMBER_OF_FISHERMEN;
 
-				if ((totalCatch - DISCARDED_FISH - fisherman1 - DISCARDED_FISH)
-						% 3 == 0) {
-					fisherman2 = (totalCatch - DISCARDED_FISH - fisherman1 - 
-						DISCARDED_FISH) / NUMBER_OF_FISHERMEN;
+				if ((totalCatch - DISCARDED_FISH - fisherman1 - DISCARDED_FISH) % 3 == 0) {fisherman2 = (totalCatch - 
+						DISCARDED_FISH - fisherman1 - DISCARDED_FISH) / NUMBER_OF_FISHERMEN;
 
-					if ((totalCatch - DISCARDED_FISH - fisherman1 - DISCARDED_FISH 
-							- fisherman2 - DISCARDED_FISH) % 3 == 0) {
-						fisherman3 = (totalCatch - DISCARDED_FISH - fisherman1 - 
-							DISCARDED_FISH - fisherman2 - DISCARDED_FISH) / 
-							NUMBER_OF_FISHERMEN;
+					if ((totalCatch - DISCARDED_FISH - fisherman1 - DISCARDED_FISH - fisherman2 - DISCARDED_FISH) 
+							% 3 == 0) {
+						fisherman3 = (totalCatch - DISCARDED_FISH - fisherman1 - DISCARDED_FISH - fisherman2 - 
+							DISCARDED_FISH) / NUMBER_OF_FISHERMEN;
 					}
 				}
 
-			leftToRot = totalCatch - DISCARDED_FISH - fisherman1 - 
-				DISCARDED_FISH - fisherman2 - DISCARDED_FISH - fisherman3;
+			leftToRot = totalCatch - DISCARDED_FISH - fisherman1 - DISCARDED_FISH - fisherman2 - DISCARDED_FISH - 
+				fisherman3;
 			
 				if (fisherman3 != 0) {
 					printf("\n");
@@ -47,10 +44,12 @@ int main(void) {
 					printf("3rd Fisherman: %d\n", fisherman3);
 					printf("Fish left to rot: %d\n", leftToRot);
 					printf("\n");
-					break;
+					// break;
 				}	
 			}
-		pBiggerCatch = &totalCatch;
+			
+			fisherman3 = 0;
+			totalCatch++;
 		}
 	}
 }

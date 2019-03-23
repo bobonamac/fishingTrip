@@ -15,7 +15,7 @@ int main(void) {
 	int totalCatch = 0;
 	int leftToRot = 0;
 
-	for (totalCatch = 0; totalCatch < 100; ++totalCatch) {
+	for (totalCatch = 26; totalCatch < 100; ++totalCatch) {
 
 		if ((totalCatch - DISCARDED_FISH) % 3 == 0) {
 			fisherman1 = (totalCatch - DISCARDED_FISH) / NUMBER_OF_FISHERMEN;

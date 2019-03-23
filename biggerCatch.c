@@ -14,7 +14,6 @@ int main(void) {
 	int fisherman3 = 0;
 	int totalCatch = 0;
 	int leftToRot = 0;
-	// int * pBiggerCatch = &totalCatch;
 
 	for (int i = 0; i < 10; ++i) {
 
@@ -44,10 +43,9 @@ int main(void) {
 					printf("3rd Fisherman: %d\n", fisherman3);
 					printf("Fish left to rot: %d\n", leftToRot);
 					printf("\n");
-					// break;
 				}	
 			}
-			
+
 			fisherman3 = 0;
 			totalCatch++;
 		}
